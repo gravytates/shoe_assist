@@ -24,10 +24,19 @@ describe('adding a brand', {:type => :feature}) do
 end
 
 describe('viewing a store', {:type => :feature}) do
-  it('allows a user to add a store to the website') do
+  it('allows a user to view a store') do
     store = Store.create({name: "shoe fly guys"})
     visit("/store/#{store.id}")
 
     expect(page).to have_content('Shoe Fly Guys')
+  end
+end
+
+describe('viewing a brand', {:type => :feature}) do
+  it('allows a user to view a brand') do
+    brand = Brand.create({name: "nicke air gordon", price: 60})
+    visit("/brand/#{brand.id}")
+
+    expect(page).to have_content('Nicke Air Gordon')
   end
 end
