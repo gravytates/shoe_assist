@@ -82,3 +82,15 @@ delete '/brand/:id/delete' do
   brand.delete
   redirect '/'
 end
+
+post '/store_results' do
+  input = params['store_search']
+  @store_results = Store.store_search(input)
+  erb :store_results
+end
+
+post '/brand_results' do
+  input = params['brand_search']
+  @brand_results = Brand.brand_search(input)
+  erb :brand_results
+end

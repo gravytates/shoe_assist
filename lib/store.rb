@@ -15,6 +15,11 @@ private
       .join(' ')
     self.name = new_name
   end
+
+  def self.store_search(input)
+    input.downcase!
+    Store.where('lower(name) like ?', "%#{input}%")
+  end
 end
 
 
@@ -41,5 +46,10 @@ class Brand < ActiveRecord::Base
     if !self.price.include? ("$")
       self.price = '$' + sprintf("%.2f", self.price)
     end
+  end
+
+  def self.brand_search(input)
+    input.downcase!
+    Brand.where('lower(name) like ?', "%#{input}%")
   end
 end

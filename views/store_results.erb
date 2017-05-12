@@ -1,0 +1,16 @@
+<h3>Shoe Assist 720</h3>
+<p>We go around the world twice for our clients</p>
+<hr>
+
+<h1>Here's your matching stores:</h1>
+<% if @store_results.any? %>
+  <ul>
+    <% @store_results.each do |store| %>
+    <li><a href="/stores/<%=store.id%>"><%= store.name %></a></li>
+    <%end%>
+  </ul>
+<% else %>
+  <p>There are no results</p>
+<% end %>
+
+<a href="/">Home</a>

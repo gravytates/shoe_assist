@@ -5,6 +5,12 @@
 
 <div class="row">
   <div id="home_col" class="col-md-8">
+    <form action="/store_results" method="post">
+      <label for="store_search">store search:</label>
+      <input type="text" name="store_search">
+      <button type="submit" class="btn btn-default">search</button>
+    </form>
+    <br>
     <form action="/new_store" method="post">
       <label for="store_name">new store name:</label>
       <br>
@@ -22,6 +28,12 @@
     <% end %>
   </div>
   <div class="col-md-4">
+    <form action="/brand_results" method="post">
+      <label for="brand_search">brand search:</label>
+      <input type="text" name="brand_search">
+      <button type="submit" class="btn btn-default">search</button>
+    </form>
+    <br>
     <form action="/new_brand" method="post">
       <label for="brand_name">new brand name:</label>
       <br>

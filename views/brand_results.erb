@@ -1,0 +1,16 @@
+<h3>Shoe Assist 720</h3>
+<p>We go around the world twice for our clients</p>
+<hr>
+
+<h1>Here's your matching brands:</h1>
+<% if @brand_results.any? %>
+  <ul>
+    <% @brand_results.each do |brand| %>
+    <li><a href="/brands/<%=brand.id%>"><%= brand.name %></a></li>
+    <%end%>
+  </ul>
+<% else %>
+  <p>There are no results</p>
+<% end %>
+
+<a href="/">Home</a>
