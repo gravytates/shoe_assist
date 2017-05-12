@@ -35,6 +35,17 @@ $ruby app.rb
 ```
 Sinatra will now make this project available in your browser by going to localhost:4567.
 
+## Specifications
+
+| behavior |  input   |  output  |
+|----------|:--------:|:--------:|
+|add new store with callback styling for name| store name: "legit footsies"|new store: Legit Footsies|
+|add new brand with callback styling for name and price| brand name: "nijke", price per shoe pair: 60| Brand: "Nijke", price: $60.00|
+|add brand to store| add "Nijke" in Legit Footsies site | Brands offered by Legit Footsies: Nijke |
+|validate to prevent duplicates | enter 'Legit Footsies' (for a second time) | error: this store already exists |
+|validate to prevent certain words | enter 'lout'| error: name is too filthy |
+|validate to prevent blank entries | enter ''| error: Name can't be blank |
+
 ## Screenshots
 
 **Store Page:**
