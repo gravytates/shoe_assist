@@ -17,7 +17,7 @@
     <form action="/store/<%= @store.id%>/add_brand" method="post">
       <input type="hidden" name="_method" value="patch">
       <label for="recipes">available brands</label>
-      <select class="form-control" name="recipe-id">
+      <select class="form-control" name="brand-id">
         <% @brands.each do |brand| %>
           <option value="<%= brand.id %>"><%= brand.name %> <%= brand.price %></option>
         <% end %>
