@@ -78,3 +78,13 @@ describe('deleting a brand', {:type => :feature}) do
     expect(page).to have_content('Shoe Assist 720')
   end
 end
+#
+describe('updating brand name', {:type => :feature}) do
+  it('allows a user change name of a brand') do
+    brand = Brand.create({name: "nicke air gordon", price: 60})
+    visit("/brand/#{brand.id}")
+    fill_in('brand_name', :with => 'burrito feet')
+    click_button('edit brand name')
+    expect(page).to have_content('Burrito Feet')
+  end
+end
