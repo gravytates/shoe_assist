@@ -36,6 +36,12 @@ patch '/store/:id/update' do
   redirect "/store/#{store.id}"
 end
 
+delete '/store/:id/delete' do
+  store = Store.find(params['id'].to_i)
+  store.delete
+  redirect '/'
+end
+
 patch '/store/:id/add_brand' do
   brand = Brand.find(params['brand-id'])
   store = Store.find(params['id'].to_i)
