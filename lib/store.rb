@@ -6,23 +6,15 @@ class Store < ActiveRecord::Base
 
 private
 
-
-  define_method(:titlecase) do
+  def titlecase
     noncaps = ["and", "as", "at", "but", "buy", "for", "from", "if", "in", "into", "is", "like", "near", "nor", "of", "off", "on", "once", "onto", "or", "over", "past", "so", "than", "that", "till", "to", "up", "upon", "with", "when", "yet"]
-    words = self.name.split(" ")
-    words.each do |word|
-binding.pry
-      noncaps.each do |noncap|
-        if word.include?(noncap)
-          word = word
-        else
-          word.capitalize!
-        end
-      end
-    end
-    self.name = words.join(" ")
+    new_name = self.name.split(' ')
+      .each{|word| word.capitalize! if ! noncaps.include? word }
+      .join(' ')
+    self.name = new_name
   end
 end
+
 
 class Brand < ActiveRecord::Base
   has_and_belongs_to_many :stores
