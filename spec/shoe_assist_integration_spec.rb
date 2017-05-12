@@ -69,3 +69,12 @@ describe('adding a brand to a store', {:type => :feature}) do
     expect(page).to have_content('Nicke Air Gordon')
   end
 end
+
+describe('deleting a brand', {:type => :feature}) do
+  it('allows a user delete a brand') do
+    brand = Brand.create({name: "nicke air gordon", price: 60})
+    visit("/brand/#{brand.id}")
+    click_button('liquidate brand')
+    expect(page).to have_content('Shoe Assist 720')
+  end
+end
