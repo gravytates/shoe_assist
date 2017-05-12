@@ -25,11 +25,11 @@ class Brand < ActiveRecord::Base
 
 
   def titlecase
-    words = self.name.split(" ")
-    words.each do |word|
-      word.capitalize!
-    end
-    self.name = words.join(" ")
+    noncaps = ["and", "as", "at", "but", "buy", "for", "from", "if", "in", "into", "is", "like", "near", "nor", "of", "off", "on", "once", "onto", "or", "over", "past", "so", "than", "that", "till", "to", "up", "upon", "with", "when", "yet"]
+    new_name = self.name.split(' ')
+      .each{|word| word.capitalize! if ! noncaps.include? word }
+      .join(' ')
+    self.name = new_name
   end
 
   # method to change price from fixnum/float style into currency style. method is run twice by app.rb upon checking for errors (see: if @brand.save), so method needs to only run for inputs where it has not already been applied
