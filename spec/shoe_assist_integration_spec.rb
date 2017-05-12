@@ -88,3 +88,13 @@ describe('updating brand name', {:type => :feature}) do
     expect(page).to have_content('Burrito Feet')
   end
 end
+
+describe('updating brand name', {:type => :feature}) do
+  it('allows a user change name of a brand') do
+    brand = Brand.create({name: "nicke air gordon", price: 60})
+    visit("/brand/#{brand.id}")
+    fill_in('brand_price', :with => '5.99')
+    click_button('edit brand price')
+    expect(page).to have_content('$5.99')
+  end
+end
