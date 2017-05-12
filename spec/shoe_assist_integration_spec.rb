@@ -50,3 +50,12 @@ describe('updating store name', {:type => :feature}) do
     expect(page).to have_content('Footies R Us')
   end
 end
+
+describe('deleting a store', {:type => :feature}) do
+  it('allows a user change name of a store') do
+    store = Store.create({name: "shoe fly guys"})
+    visit("/store/#{store.id}")
+    click_button('close store')
+    expect(page).to have_content('Shoe Assist 720')
+  end
+end
