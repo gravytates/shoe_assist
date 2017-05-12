@@ -9,14 +9,18 @@ describe(Store) do
     expect(store.save).to eq(false)
   end
 
+  it("returns false if non-allowed name is used") do
+    store = Store.create({name: "lout"})
+    expect(store.save).to eq(false)
+  end
+
   describe "#titlecase" do
     it("titlecases the title of the recipe") do
-      store = Store.create({name: "shoe fly guys"})
-      expect(store.name).to eq("Shoe Fly Guys")
+      store = Store.create({name: "this and that"})
+      expect(store.name).to eq("This and that")
     end
   end
 end
-
 
 describe(Brand) do
   it { should have_and_belong_to_many(:stores) }
