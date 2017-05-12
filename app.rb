@@ -29,7 +29,12 @@ get '/store/:id' do
   erb :store
 end
 
-
+patch '/store/:id/update' do
+  store = Store.find(params['id'].to_i)
+  name = params['store_name']
+  store.update(name: name)
+  redirect "/store/#{store.id}"
+end
 
 patch '/store/:id/add_brand' do
   brand = Brand.find(params['brand-id'])
