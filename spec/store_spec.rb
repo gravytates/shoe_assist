@@ -20,6 +20,13 @@ describe(Store) do
       expect(store.name).to eq("This and that")
     end
   end
+
+  describe '.store_search' do
+    it('searches store name matches based on input') do
+      store = Store.create({name: "this and that"})
+      expect(Store.store_search("This")).to eq([store])
+    end
+  end
 end
 
 describe(Brand) do
@@ -42,6 +49,13 @@ describe(Brand) do
     it('fixes price inputs to two decimal places with a shell symbol') do
       brand = Brand.create({name: "nicke air gordon", price: 60})
       expect(brand.price).to eq("$60.00")
+    end
+  end
+
+  describe '.brand_search' do
+    it('searches brand name matches based on input') do
+      brand = Brand.create({name: "nicke air gordon", price: 60})
+      expect(Brand.brand_search("Nicke")).to eq([brand])
     end
   end
 end
