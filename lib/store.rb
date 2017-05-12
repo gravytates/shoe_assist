@@ -28,7 +28,6 @@ class Brand < ActiveRecord::Base
   end
 
   def currency_change
-    new_amount = "$" + sprintf("%.2f", self.price)
-    self.price = new_amount
+    self.price = "$" + sprintf("%.2f", self.price)
   end
 end

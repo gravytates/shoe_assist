@@ -4,8 +4,21 @@ require('pry')
 
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
-get "/" do
+get '/' do
   @stores = Store.all
   @brands = Brand.all
   erb :index
+end
+
+post '/new_store' do
+  name = params['store_name']
+  Store.create({name: name})
+  redirect '/'
+end
+
+post '/new_brand' do
+  name = params['brand_name']
+  price = params['brand_price'].to_f
+  Brand.create({name: name, price: price})
+  redirect '/'
 end
