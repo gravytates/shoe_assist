@@ -18,5 +18,8 @@ RSpec.configure do |config|
     Store.all.each do |d|
       d.destroy
     end
+    Brand.all.each do |d|
+      d.destroy
+    end
   end
 end
