@@ -10,3 +10,15 @@ describe('adding a store', {:type => :feature}) do
     expect(page).to have_content('Shoe Assist 720')
   end
 end
+
+describe('adding a brand', {:type => :feature}) do
+  it('allows a user to add a brand to the website') do
+    visit('/')
+
+    fill_in('brand_name', :with =>'Nickes')
+    fill_in('brand_price', :with => '44.99')
+
+    click_button('add brand')
+    expect(page).to have_content('Shoe Assist 720')
+  end
+end
