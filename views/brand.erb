@@ -11,6 +11,15 @@
   <p><%= @brand.name %> currently not offered at any stores.</p>
 <% end %>
 <br>
+
+<form action="/brand/<%= @brand.id %>/update" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input placeholder="<%= @brand.name %>" type="text" name="brand_name">
+  <br><br>
+  <button type="submit" class="btn btn-info">edit brand name</button>
+</form>
+<br>
+
 <form class="" action="/brand/<%= @brand.id %>/delete" method="post">
   <input type="hidden" name="_method" value="delete">
   <button class="btn btn-danger" href="/">liquidate brand</button>

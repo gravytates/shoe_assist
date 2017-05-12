@@ -63,6 +63,13 @@ get '/brand/:id' do
   erb :brand
 end
 
+patch '/brand/:id/update' do
+  brand = Brand.find(params['id'].to_i)
+  name = params['brand_name']
+  brand.update(name: name)
+  redirect "/brand/#{brand.id}"
+end
+
 delete '/brand/:id/delete' do
   brand = Brand.find(params['id'].to_i)
   brand.delete
