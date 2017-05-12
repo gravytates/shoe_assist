@@ -48,3 +48,9 @@ patch '/store/:id/add_brand' do
   store.brands.push(brand)
   redirect "/store/#{store.id}"
 end
+
+get '/brand/:id' do
+  @brand = Brand.find(params['id'].to_i)
+  @stores = Store.all
+  erb :brand
+end
