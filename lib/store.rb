@@ -16,14 +16,19 @@ end
 class Brand < ActiveRecord::Base
   has_and_belongs_to_many :stores
   validates(:name, {presence: true, length: { maximum: 100}})
-  before_save(:titlecase)
+  before_save(:titlecase, :currency_change)
 
-private
+
   def titlecase
     words = self.name.split(" ")
     words.each do |word|
       word.capitalize!
     end
     self.name = words.join(" ")
+  end
+
+  def currency_change
+    new_amount = "$" + sprintf("%.2f", self.price)
+    self.price = new_amount
   end
 end
