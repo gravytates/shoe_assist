@@ -1,7 +1,8 @@
-# Shoe Assist 720
-This website allows the user to create and organize shoe stores and shoe brands with a many to many relationship. Add a brand and name your price. Custom callbacks and validations will ensure undesirable inputs are either discouraged or formatted to be more aesthetically pleasing. You have full control over your own shoe empire as your can update, add and delete at any point. This leverage truly allows the user to accomplish their goal of circling the globe twice for their clients. Shoe Assist 720.
+# _Shoe Assist 720_
 ![Image of Homepage Screenshot](public/img/homepage.png)
-
+This website allows the user to create and organize shoe stores and shoe brands with a many to many relationship. Add a brand and name your price. Custom callbacks and validations will ensure undesirable inputs are either discouraged or formatted to be more aesthetically pleasing. You have full control over your own shoe empire as your can update, add and delete at any point. This leverage truly allows the user to accomplish their goal of circling the globe twice for their clients. Shoe Assist 720.
+![Image of Database Schema](public/img/schema.png)
+-Schema built with SQL Designer
 
 ### Prerequisites
 
