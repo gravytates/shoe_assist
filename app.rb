@@ -29,6 +29,8 @@ get '/store/:id' do
   erb :store
 end
 
+
+
 patch '/store/:id/add_brand' do
   brand = Brand.find(params['brand-id'])
   store = Store.find(params['id'].to_i)
