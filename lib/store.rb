@@ -5,10 +5,20 @@ class Store < ActiveRecord::Base
   before_save(:titlecase)
 
 private
+
+
   define_method(:titlecase) do
+    noncaps = ["and", "as", "at", "but", "buy", "for", "from", "if", "in", "into", "is", "like", "near", "nor", "of", "off", "on", "once", "onto", "or", "over", "past", "so", "than", "that", "till", "to", "up", "upon", "with", "when", "yet"]
     words = self.name.split(" ")
     words.each do |word|
-      word.capitalize!
+binding.pry
+      noncaps.each do |noncap|
+        if word.include?(noncap)
+          word = word
+        else
+          word.capitalize!
+        end
+      end
     end
     self.name = words.join(" ")
   end
