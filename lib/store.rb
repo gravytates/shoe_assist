@@ -2,6 +2,8 @@ class Store < ActiveRecord::Base
   has_and_belongs_to_many :brands
   validates(:name, {presence: true, case_sensitive: false, length: { maximum: 100}})
   validates_uniqueness_of :name, case_sensitive: false
+  validates :name, exclusion: { in: %w(clodhopper lout curmudgeon),
+  message: " is too filthy!" }
   before_save(:titlecase)
 
 private
@@ -21,6 +23,8 @@ class Brand < ActiveRecord::Base
   validates(:name, {presence: true, length: { maximum: 100}})
   validates_uniqueness_of :name, case_sensitive: false
   validates(:price, {presence: true, length: { maximum: 6}})
+  validates :name, exclusion: { in: %w(clodhopper lout curmudgeon),
+  message: " is too filthy!" }
   before_save(:titlecase, :currency_change)
 
 
