@@ -12,15 +12,23 @@ end
 
 post '/new_store' do
   name = params['store_name']
-  Store.create({name: name})
-  redirect '/'
+  @store = Store.create({name: name})
+  if @store.save
+    redirect '/'
+  else
+    erb :error
+  end
 end
 
 post '/new_brand' do
   name = params['brand_name']
   price = params['brand_price'].to_f
-  Brand.create({name: name, price: price})
-  redirect '/'
+  @brand = Brand.create({name: name, price: price})
+  if @brand.save
+    redirect '/'
+  else
+    erb :error
+  end
 end
 
 get '/store/:id' do
@@ -53,4 +61,10 @@ get '/brand/:id' do
   @brand = Brand.find(params['id'].to_i)
   @stores = Store.all
   erb :brand
+end
+
+delete '/brand/:id/delete' do
+  brand = Brand.find(params['id'].to_i)
+  brand.delete
+  redirect '/'
 end

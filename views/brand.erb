@@ -1,4 +1,5 @@
-<h3><%= @brand.name %></h3>
+<h3><b><em><%= @brand.name %></em></b></h3>
+<h4>Price: <%= @brand.price %></h4>
 
 
 <p>Stores where brand is found:</p>
@@ -7,6 +8,14 @@
     <li><a href="/store/<%= store.id %>"><%= store.name %></a></li>
   <% end %>
 <% else %>
-  <p>This isn't currently offered at any stores.</p>
+  <p><%= @brand.name %> currently not offered at any stores.</p>
 <% end %>
+<br>
+<form class="" action="/brand/<%= @brand.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button class="btn btn-danger" href="/">liquidate brand</button>
+</form>
+<br>
+
+<a href="/">Home</a>
 <hr>

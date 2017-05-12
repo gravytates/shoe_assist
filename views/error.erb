@@ -1,0 +1,17 @@
+<h3>Not chill.</h3>
+<% if @store != nil %>
+<ul>
+  <% @store.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+<% if @brand != nil %>
+<ul>
+  <% @brand.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<h5><a href="/" >try again</a></h5>
