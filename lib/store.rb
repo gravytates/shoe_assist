@@ -5,11 +5,11 @@ class Store < ActiveRecord::Base
 
 private
   define_method(:titlecase) do
-    words = self.title.split(" ")
+    words = self.name.split(" ")
     words.each do |word|
       word.capitalize!
     end
-    self.title = words.join(" ")
+    self.name = words.join(" ")
   end
 end
 
@@ -20,10 +20,10 @@ class Brand < ActiveRecord::Base
 
 private
   def titlecase
-    words = self.title.split(" ")
+    words = self.name.split(" ")
     words.each do |word|
       word.capitalize!
     end
-    self.title = words.join(" ")
+    self.name = words.join(" ")
   end
 end
