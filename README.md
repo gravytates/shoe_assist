@@ -1,18 +1,46 @@
-# <!--PROJECT NAME HERE-->
+# Shoe Assist 720
+This website allows the user to create and organize shoe stores and shoe brands with a many to many relationship. Add a brand and name your price. Custom callbacks and validations will ensure undesirable inputs are either discouraged or formatted to be more aesthetically pleasing. You have full control over your own shoe empire as your can update, add and delete at any point. This leverage truly allows the user to accomplish their goal of circling the globe twice for their clients. Shoe Assist 720.
+![Image of Homepage Screenshot](public/img/homepage.png)
 
-<!--PROJECT DESCRIPTION HERE-->
 
 ### Prerequisites
 
 Web browser with ES6 compatibility
 Examples: Chrome, Safari
 
-Ruby <!--VERSION HERE-->
+Ruby 2.3.1
 Bundler
 
 ### Installing
 
-Installation is quick and easy! First you can open this link <!--HEROKU LINK HERE--> to see the webpage in action live online. Or you can clone this repository to your machine, navigate to the file path in your terminal, and run 'app.rb' by typing '$ruby app.rb'. If you chose to clone the repository, after you run 'app.rb' you will need to copy the localhost path into your web browser. The standard localhost for Sinatra is port 4567
+Clone this repo by typing into the terminal:
+```
+$ git clone https://github.com/gravytates/shoe_assist.git
+```
+
+In a new terminal window, start postgres in the background:
+```
+$ postgres
+```
+
+Navigate to this project directory in the terminal. Then type:
+```
+$ rake db:schema:load
+```
+
+In a new terminal tab, start the sinatra server by typing:
+```
+$ruby app.rb
+```
+Sinatra will now make this project available in your browser by going to localhost:4567.
+
+## Screenshots
+
+**Store Page:**
+![Image of Store Page Screenshot](public/img/store.png)
+
+**Brand Page:**
+![Image of Brand Page Screenshot](public/img/brand.png)
 
 ## Built With
 
@@ -23,16 +51,17 @@ Installation is quick and easy! First you can open this link <!--HEROKU LINK HER
 * Bootstrap https://getbootstrap.com/
 * ES6
 * Jquery https://jquery.com/
+* ActiveRecord
 
 ## Authors
 
-* <!--YOUR NAME HERE-->
+* Grady Shelton
 
 ## License
 
 MIT License
 
-Copyright (c) <!--YOUR NAME & YEAR HERE-->
+Copyright (c) Grady Shelton
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -46,9 +75,8 @@ copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
