@@ -70,6 +70,13 @@ patch '/brand/:id/update' do
   redirect "/brand/#{brand.id}"
 end
 
+patch '/brand/:id/update_price' do
+  brand = Brand.find(params['id'].to_i)
+  price = params['brand_price']
+  brand.update(price: price)
+  redirect "/brand/#{brand.id}"
+end
+
 delete '/brand/:id/delete' do
   brand = Brand.find(params['id'].to_i)
   brand.delete

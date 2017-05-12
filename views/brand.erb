@@ -20,6 +20,14 @@
 </form>
 <br>
 
+<form action="/brand/<%= @brand.id %>/update_price" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input placeholder="<%= @brand.price %>" type="number" min="0.01" step="0.01" name="brand_price">
+  <br><br>
+  <button type="submit" class="btn btn-info">edit brand price</button>
+</form>
+<br>
+
 <form class="" action="/brand/<%= @brand.id %>/delete" method="post">
   <input type="hidden" name="_method" value="delete">
   <button class="btn btn-danger" href="/">liquidate brand</button>
