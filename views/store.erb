@@ -1,0 +1,28 @@
+<h3><%= @store.name %></h3>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <p>Brand offerings:</p>
+    <% if @store.brands.any? %>
+      <% @store.brands.each do |brand| %>
+        <li><a href="/brand/<%= brand.id %>"><%= brand.name %>, <%= brand.price %></a></li>
+      <% end %>
+    <% else %>
+      <p>This store isn't currently offering any brands.</p>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h3>Add a brand to this store</h3>
+    <form action="/store/<%= @store.id%>/add_brand" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <label for="recipes">available brands</label>
+      <select class="form-control" name="recipe-id">
+        <% @brands.each do |brand| %>
+          <option value="<%= brand.id %>"><%= brand.name %> <%= brand.price %></option>
+        <% end %>
+      </select>
+      <button type="submit" class="btn btn-info" name="button">add to store</button>
+    </form>
+  </div>
+</div>

@@ -22,3 +22,9 @@ post '/new_brand' do
   Brand.create({name: name, price: price})
   redirect '/'
 end
+
+get '/store/:id' do
+  @store = Store.find(params['id'].to_i)
+  @brands = Brand.all
+  erb :store
+end

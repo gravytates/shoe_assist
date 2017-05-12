@@ -14,7 +14,7 @@
 
     <% if @stores.any? %>
       <% @stores.each do |store| %>
-        <li><a href="/store/<%= store.id%>"><%= store.name %></a></li>
+        <li><a href="/store/<%= store.id %>"><%= store.name %></a></li>
       <% end %>
     <% else %>
       <p>There are no stores listed yet.</p>
@@ -32,7 +32,7 @@
 
     <% if @brands.any? %>
       <% @brands.each do |brand| %>
-        <li><a href="/brand/<%= brand.id%>"><%= brand.name %>, <%= brand.price %></a></li>
+        <li><a href="/brand/<%= brand.id %>"><%= brand.name %>, <%= brand.price %></a></li>
       <% end %>
     <% else %>
       <p>There are no brands listed yet.</p>
