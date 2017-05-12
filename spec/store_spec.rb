@@ -40,5 +40,4 @@ describe(Brand) do
       expect(brand.price).to eq("$60.00")
     end
   end
-
 end

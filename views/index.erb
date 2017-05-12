@@ -1,2 +1,41 @@
-<%= @stores %>
-<h3>Hello World</h3>
+<h3>Shoe Assist 720</h3>
+<p>We go around the world twice for our clients</p>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <form action="/add_store" method="post">
+      <label for="store_name">Store name:</label>
+      <br>
+      <input class="form-control" type="text" name="store_name">
+      <br>
+      <button type="submit" class="btn btn-success">add store</button>
+    </form>
+
+    <% if @stores.any? %>
+      <% @stores.each do |store| %>
+        <li><a href="/store/<%= store.id%>"><%= store.name %></a></li>
+      <% end %>
+    <% else %>
+      <p>There are no stores listed yet.</p>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <form action="/add_brand" method="post">
+      <label for="brand_name">Brand name:</label>
+      <br>
+      <input class="form-control" type="text" name="brand_name">
+      <input type="number" name="brand_price" value="">
+      <br>
+      <button type="submit" class="btn btn-success">add brand</button>
+    </form>
+
+    <% if @brands.any? %>
+      <% @brands.each do |brand| %>
+        <li><a href="/brand/<%= brand.id%>"><%= brand.name %>, <%= brand.price %></a></li>
+      <% end %>
+    <% else %>
+      <p>There are no brands listed yet.</p>
+    <% end %>
+  </div>
+</div>
