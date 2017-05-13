@@ -45,6 +45,9 @@ Sinatra will now make this project available in your browser by going to localho
 |validate to prevent duplicates | enter 'Legit Footsies' (for a second time) | error: this store already exists |
 |validate to prevent certain words | enter 'lout'| error: name is too filthy |
 |validate to prevent blank entries | enter ''| error: Name can't be blank |
+|search stores by name|search "Shoe"|Results: "Shoe Factory", "Shoe Guys"|
+|search brands by name|search "Ni"|Results: "Nijke", "Nick Shoes"|
+
 
 ## Screenshots
 
