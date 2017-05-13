@@ -10,6 +10,5 @@ gem "sinatra"
 group :test do
   gem "rspec"
   gem "capybara"
-  gem "pry"
 end
 gem("shoulda-matchers", '~> 2.0')

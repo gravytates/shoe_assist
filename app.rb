@@ -1,8 +1,9 @@
 require("bundler/setup")
 Bundler.require(:default)
-require('pry')
 
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
+
+DATABASE_URL="postgres://localhost/shoe_assist_development"
 
 get '/' do
   @stores = Store.all
