@@ -4,7 +4,13 @@ li {
 
 body {
   background-color: rgb(210, 210, 210);
+  font-size: 15px;
 }
+
+h1 {
+  font-family: 'Aldrich', sans-serif;
+}
+
 
 footer {
   background-image: url(../img/shoe_row.jpg);
@@ -21,6 +27,11 @@ footer {
   margin-bottom: 0;
   clear: both;
 }
+
+#subheading {
+  font-size: 25px;
+}
+
  #home_col {
    padding-right: 25%;
  }
